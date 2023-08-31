@@ -17,7 +17,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm ci
       - name: Start selenoid
-        uses: Xotabu4/selenoid-github-action@v1
+      - uses: Xotabu4/selenoid-github-action@v1
       - run: npm ci  
       - name: Run tests
       - run: "npm install"
