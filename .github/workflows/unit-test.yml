@@ -16,8 +16,10 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm ci
-      - uses: browser-actions/setup-chrome@v1
-      - run: chrome
+      - name: Start selenoid
+        uses: Xotabu4/selenoid-github-action@v1
+      - run: npm ci  
+      - name: Run tests
       - run: "npm install"
       - run: "npm run wdio"
       
